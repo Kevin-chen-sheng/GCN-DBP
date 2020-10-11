@@ -1,54 +1,49 @@
 # GCN-DBP
-使用图卷积对生物序列进行分类
 Use graph convolution to classify biological sequences.
-需要准备平衡的数据集，前一半为正例，后一半为反例，只需要fasta格式文件即可执行本程序
+
 The balanced data set needs to be prepared. The first half is a positive example and the second half is a negative example. This program can be executed by fasta file only.
 
-## 使用方法usage
+## usage
  
-  首先安装依赖First install dependencies：Python 3.6,Tensorflow >= 1.14.0(no 2.0),sklearn, numpy,nltk,networkx
+  First install dependencies：Python 3.6,Tensorflow >= 1.14.0(no 2.0),sklearn, numpy,nltk,networkx
  
-  直接将整个项目的文件夹放到服务器上
-  
-  把fasta文件放在项目的根目录，即和代码相同的路径下
-  
-  打开run_cv.py 修改三个参数Open run_cv.py and modify three parameters：
-  
-  cv= 交叉验证的折数Fold number of cross validation
-  
-  k=Kmer中的k the number of kmer
-  
-  fasta_name=fasta训练集的文件名File name of training set
-  
-  保存后运行Run after saving : python run_cv.py
+  Put the fasta file in the root directory of the project, which is the same path as the code.
  
- ## 运行结果：
+  Open run_cv.py and modify three parameters：
+  
+  cv: Fold number of cross validation
+  
+  k: k the number of kmer
+  
+  fasta_name: File name of training set
+  
+  Run after saving : python run_cv.py
  
-    程序运行结束会打印交叉验证的ACC，并且把每一个模型的ACC保存在了后缀result.csv的文件里。
+ ## results：
+ 
+    At the end of the program, the cross-validated ACC will be printed, and the ACC of each model will be saved in a file with the suffix result.csv.
     
-    程序的预测结果保存在后缀为pred.csv文件里，第一列为正确lables,第二列为预测值
+    The prediction results of the program are saved in a file with the suffix pred.csv, the first column is the correct labels, and the second column is the predicted value.
     
-    (注意这时的顺序可能已经被打乱了，和输入fasta的顺序不同，但不影响用来计算其他指标)
+    (Note that the order at this time may have been disrupted, which is different from the order of entering fasta, but it does not affect the calculation of other indicators.)
     
-    data文件夹下产生的是一些中间文件，以及产生的词向量，句向量。
+    What are generated under the data folder are some intermediate files, as well as the generated word vectors and sentence vectors.
 
---------------------------------分割线-----------------------------------------------------
+-------------------------------------------------------------------------------------
 
-## 添加可训练+测试模式的代码：
+## Independent test：
 
 train_test_GCN.py 和 prepare_data_trian_test.py
 
-需要准备训练集fasta格式文件 测试集 fasta格式文件
+Need to prepare training set fasta format files, test set fasta format files, training set label files, and test set label files.
 
-以及训练集的标签文件，测试集的标签文件
+Then modify the file path in train_test_GCN.py
 
-然后修改train_test_GCN.py 中的文件路径
+Then run train_test_GCN.py 
 
-运行 train_test_GCN.py 
+----------------------------------------------------------------
 
--------------------------------我是分割线---------------------------------
-
-GCN的参数在train.py中
+The parameters of GCN in train.py:
 
         flags.DEFINE_string('model', 'gcn', 'Model string.')
         flags.DEFINE_float('learning_rate', 0.02, 'Initial learning rate.')
@@ -61,4 +56,4 @@ GCN的参数在train.py中
                             'Tolerance for early stopping (# of epochs).')
         flags.DEFINE_integer('max_degree', 3, 'Maximum Chebyshev polynomial degree.')
 
-可以尝试调整hidden1,early_stop,learning_rate 参数的值
+You can try to adjust the values ​​of hidden1, early_stop, learning_rate parameters.
