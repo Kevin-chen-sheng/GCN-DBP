@@ -1,25 +1,26 @@
-# fasta_GCN
+# GCN-DBP
 使用图卷积对生物序列进行分类
-
+Use graph convolution to classify biological sequences.
 需要准备平衡的数据集，前一半为正例，后一半为反例，只需要fasta格式文件即可执行本程序
+The balanced data set needs to be prepared. The first half is a positive example and the second half is a negative example. This program can be executed by fasta file only.
 
-## 使用方法
+## 使用方法usage
  
-  首先安装依赖：Python 3.6,Tensorflow >= 1.14.0(不要用2.0),sklearn, numpy,nltk,networkx
+  首先安装依赖First install dependencies：Python 3.6,Tensorflow >= 1.14.0(no 2.0),sklearn, numpy,nltk,networkx
  
   直接将整个项目的文件夹放到服务器上
   
   把fasta文件放在项目的根目录，即和代码相同的路径下
   
-  打开run_cv.py 修改三个参数：
+  打开run_cv.py 修改三个参数Open run_cv.py and modify three parameters：
   
-  cv= 交叉验证的折数
+  cv= 交叉验证的折数Fold number of cross validation
   
-  k=Kmer中的k
+  k=Kmer中的k the number of kmer
   
-  fasta_name=fasta文件的文件名
+  fasta_name=fasta训练集的文件名File name of training set
   
-  保存后运行python run_cv.py
+  保存后运行Run after saving : python run_cv.py
  
  ## 运行结果：
  
