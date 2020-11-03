@@ -1,10 +1,3 @@
-'''
-@Description: In User Settings Edit
-@Author: your name
-@Date: 2019-10-18 16:03:45
-@LastEditTime: 2019-10-21 10:12:05
-@LastEditors: Please set LastEditors
-'''
 from sklearn.model_selection import StratifiedKFold
 #import argparse
 import numpy as np
