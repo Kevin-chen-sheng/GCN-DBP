@@ -1,10 +1,3 @@
-'''
-@Description: In User Settings Edit
-@Author: your name
-@Date: 2019-10-18 15:19:20
-@LastEditTime: 2019-10-18 21:47:16
-@LastEditors: Please set LastEditors
-'''
 from __future__ import division
 from __future__ import print_function
 
