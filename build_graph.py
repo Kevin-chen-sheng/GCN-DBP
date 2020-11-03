@@ -1,10 +1,3 @@
-'''
-@Description: In User Settings Edit
-@Author: your name
-@Date: 2019-10-18 15:19:20
-@LastEditTime: 2019-10-18 19:14:24
-@LastEditors: Please set LastEditors
-'''
 import os
 import random
 import numpy as np
