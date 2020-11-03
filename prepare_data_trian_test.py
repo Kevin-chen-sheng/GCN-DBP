@@ -1,10 +1,3 @@
-'''
-@Description: In User Settings Edit
-@Author: your name
-@Date: 2019-10-17 11:08:57
-@LastEditTime: 2019-10-22 21:31:49
-@LastEditors: Please set LastEditors
-'''
 #!/usr/bin/python
 #-*-coding:utf-8-*-
 import numpy as np
