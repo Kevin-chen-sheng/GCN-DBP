@@ -39,6 +39,7 @@ if __name__ == "__main__":
     #test_label='test.label'
     train_data = 'PDB_train.txt'
     train_label = 'train_label.txt'
+    #PDB_test.txt here is the independent test set PDB2272
     test_data = 'PDB_test.txt'
     test_label = 'test_label.txt'
 
